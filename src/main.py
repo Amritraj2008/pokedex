@@ -60,7 +60,7 @@ def get_bot_data(app, message):
     message.continue_propagation()
 
 
-@app.on_message(Filters.command(['stats', 'stats@inhumanDexBot']))
+@app.on_message(Filters.command(['stats', 'stats@pokedexkingbot']))
 def get_stats(app, message):
     if message.from_user.id in Config.sudo:
         members = 0
@@ -78,7 +78,7 @@ def get_stats(app, message):
 
 
 # ===== Home =====
-@app.on_message(Filters.command(['start', 'start@inhumanDexBot']))
+@app.on_message(Filters.command(['start', 'start@pokeDexkingBot']))
 def start(app, message):
     app.send_message(
         chat_id=message.chat.id,
@@ -87,7 +87,7 @@ def start(app, message):
     )
 
 # ==== Type Pokemon =====
-@app.on_message(Filters.command(['type', 'type@inhumanDexBot']))
+@app.on_message(Filters.command(['type', 'type@pokedexkingBot']))
 def ptype(app, message):
     try:
         gtype = message.text.split(' ')[1]
@@ -153,7 +153,7 @@ def ptype_buttons(user_id):
         InlineKeyboardButton('Delete',callback_data=f"hexa_delete_{user_id}")]])
     return keyboard
     
-@app.on_message(Filters.command(['types', 'types@inhumanDexBot']))
+@app.on_message(Filters.command(['types', 'types@pokedexkingBot']))
 def types(app, message): 
     user_id = message.from_user.id
     app.send_message(
@@ -217,7 +217,7 @@ def button2(client: app, callback_query: CallbackQuery):
         )
   
 # ===== Pokemon Type Command ======
-@app.on_message(Filters.command(['ptype', 'ptype@inhumanDexBot']))
+@app.on_message(Filters.command(['ptype', 'ptype@pokedexkingBot']))
 def poketypes(app, message): 
     user_id = message.from_user.id
     try:
@@ -317,7 +317,7 @@ def poketypes_back(client: app, callback_query: CallbackQuery):
 @app.on_message(Filters.command(['data', 'data@inhumanDexBot']))
 def pkmn_search(app, message):
     try:
-        if message.text == '/data' or message.text == '/data@inhumanDexBot':
+        if message.text == '/data' or message.text == '/data@pokedexkingBot':
             app.send_message(message.chat.id, texts['error1'], parse_mode='HTML')
             return None
         pkmn = func.find_name(message.text)
@@ -473,7 +473,7 @@ def locations(app, call):
 
 # ===== Usage command =====
 @app.on_callback_query(Filters.create(lambda _, query: 'usage' in query.data))
-@app.on_message(Filters.command(['usage', 'usage@inhumanDexBot']))
+@app.on_message(Filters.command(['usage', 'usage@pokedexkingBot']))
 def usage(app, message):
     try:
         page = int(re.split('/', message.data)[1])
@@ -501,7 +501,7 @@ def usage(app, message):
 
 
 # ===== FAQ command =====
-@app.on_message(Filters.command(['faq', 'faq@inhumanDexBot']))
+@app.on_message(Filters.command(['faq', 'faq@poledexkingBot']))
 def faq(app, message):
     text = texts['faq']
     app.send_message(
@@ -514,13 +514,13 @@ def faq(app, message):
 
 
 # ===== About command =====
-@app.on_message(Filters.command(['about', 'about@inhumanDexBot']))
+@app.on_message(Filters.command(['about', 'about@pokedexkingBot']))
 def about(app, message):
     text = texts['about']
     markup = InlineKeyboardMarkup([[
         InlineKeyboardButton(
             text='Github',
-            url='https://github.com/alessiocelentano/rotomgram'
+            url='https://github.com/amritraj2008'
         )
     ]])
 
