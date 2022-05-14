@@ -352,7 +352,7 @@ def pkmn_search(app, message):
     ],
     [
         InlineKeyboardButton(
-            text='⚔️ Moveset',
+            text='⚔️👊 Moveset',
             callback_data='moveset/'+pkmn+'/'+form
         ),
         InlineKeyboardButton(
@@ -414,7 +414,7 @@ def all_infos(app, call):
     ],
     [
         InlineKeyboardButton(
-            text='⚔️ Moveset',
+            text='⚔️👊 Moveset',
             callback_data='moveset/'+pkmn+'/'+form
         ),
         InlineKeyboardButton(
