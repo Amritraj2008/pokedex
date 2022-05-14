@@ -356,7 +356,7 @@ def pkmn_search(app, message):
             callback_data='moveset/'+pkmn+'/'+form
         ),
         InlineKeyboardButton(
-            text='🏠 Locations',
+            text='🌲🏠 Locations',
             callback_data='locations/'+pkmn+'/'+form
         )
     ]]
@@ -418,7 +418,7 @@ def all_infos(app, call):
             callback_data='moveset/'+pkmn+'/'+form
         ),
         InlineKeyboardButton(
-            text='🏠 Locations',
+            text='🌲🏠 Locations',
             callback_data='locations/'+pkmn+'/'+form
         )
     ]]
@@ -533,15 +533,15 @@ def about(app, message):
 
 
 # ===== Raid commands =====
-@app.on_message(Filters.command(['addcode', 'addcode@inhumanDexBot']))
+@app.on_message(Filters.command(['addcode', 'addcode@pokedexkingBot']))
 def call_add_fc(app, message):
     raid.add_fc(app, message, texts)
 
-@app.on_message(Filters.command(['mycode', 'mycode@inhumanDexBot']))
+@app.on_message(Filters.command(['mycode', 'mycode@pokedexkingBot']))
 def call_show_my_fc(app, message):
     raid.show_my_fc(app, message, texts)
 
-@app.on_message(Filters.command(['newraid', 'newraid@inhumanDexBot']))
+@app.on_message(Filters.command(['newraid', 'newraid@pokedexkingbot']))
 def call_new_raid(app, message):
     raid.new_raid(app, message, texts)
 
