@@ -314,7 +314,7 @@ def poketypes_back(client: app, callback_query: CallbackQuery):
         
 # ===== Data command =====
 @app.on_callback_query(Filters.create(lambda _, query: 'basic_infos' in query.data))
-@app.on_message(Filters.command(['data', 'data@inhumanDexBot']))
+@app.on_message(Filters.command(['data', 'data@pokedexkingbot']))
 def pkmn_search(app, message):
     try:
         if message.text == '/data' or message.text == '/data@pokedexkingBot':
