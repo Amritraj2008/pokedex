@@ -19,7 +19,7 @@ app = Client(
 )
 
 texts = json.load(open('src/texts.json', 'r'))
-data = json.load(open('src/pkmn.json', 'r'))
+data = json.load(open('src/pokedex.json', 'r'))
 stats = json.load(open('src/stats.json', 'r'))
 jtype = json.load(open('src/type.json', 'r'))
 
