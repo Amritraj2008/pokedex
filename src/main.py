@@ -531,6 +531,630 @@ def about(app, message):
         disable_web_page_preview=True
     )
 
+# ======= common commands ========
+
+
+
+
+url_nature = 'https://img.rankedboost.com/wp-content/uploads/2016/08/pokemon-go-natures.jpg'
+f = open('out.jpg','wb')
+f.write(urllib.request.urlopen(url_nature).read())
+f.close()
+
+
+@app.on_message(Filters.command(['nature', 'nature@pokedexkingBot']))
+
+def send_photo(message):
+    tb.send_chat_action(message.chat.id, 'upload_photo')
+    img = open('out.jpg', 'rb')
+    @app.send_photo(message.chat.id, img, reply_to_message_id=message.message_id)
+    img.close()
+
+@app.on_message(Filters.command=['start', 'start@pokedexkingbot'])
+def start(message):
+    app.reply_to(message,f'✨ Hello @{message.from_user.username} ✨\n\n✨ I am PokeDex Bot ✨\n\n✨ My Master Is @amritraj20_08 ✨\n\n✨Add Me To Group And I will help you by providing informaton about pokemon Related Facts✨')
+
+@app.on_message(Filters.command=['hardy','docile','serious','bashful','quirky','Hardy','Docile','Serious','Bashful','Quirky','hardy@pokedexkingbot','docile@pokedexkingbot','serious@pokedexkingbot','bashful@pokedexkingbot','Quirky@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - None\n➖ Stats Decrease - None')
+
+@app.on_message(Filters.command=['guide','guide@pokedexkingbot'])
+def guide(message):
+    app.reply_to(message,'https://telegra.ph/A-Beginners-Guide-to-HeXa-02-06')
+
+@app.on_message(Filters.command=['timid','timid@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Speed\n➖ Stats Decrease - Attack')
+
+@app.on_message(command=['jolly','Jolly@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Speed\n➖ Stats Decrease - Sp.Attack')
+
+@app.on_message(command=['hasty','hasty@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Speed\n➖ Stats Decrease - Defence')
+
+@app.on_message(command=['naive','naive@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Speed\n➖ Stats Decrease - Sp.Defence')
+
+@app.on_message(command=['lonely','lonely@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Attack\n➖ Stats Decrease - Defence')
+
+@app.on_message(command=['brave','brave@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Attack\n➖ Stats Decrease - Speed')
+
+@app.on_message(command=['adamant','adamant@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Attack\n➖ Stats Decrease - Sp.Attack')
+
+@app.on_message(command=['naughty','naughty@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Attack\n➖ Stats Decrease - Sp.Defence')
+
+@app.on_message(command=['modest','modest@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Sp.Attack\n➖ Stats Decrease - Attack')
+
+@app.on_message(command=['rash','rash@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Sp.Attack\n➖ Stats Decrease - Sp.Defence')
+
+@app.on_message(command=['mild','mild@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Sp.Attack\n➖ Stats Decrease - Defence')
+
+@app.on_message(command=['quite','quite@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Sp.Attack\n➖ Stats Decrease - Speed')
+
+@app.on_message(command=['calm','calm@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Sp.Defence\n➖ Stats Decrease - Attack')
+
+@app.on_message(command=['careful','careful@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Sp.Defence\n➖ Stats Decrease - Sp.Attack')
+
+@app.message(command=['gentle','gentle@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Sp.Defence\n➖ Stats Decrease - Defence')
+
+@app.on_message(command=['sassy','sassy@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Sp.Defence\n➖ Stats Decrease - Speed')
+
+@app.on_message(command=['relaxed','relaxed@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Defence\n➖ Stats Decrease - Speed')
+
+@app.on_message(command=['bold','bold@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Defence\n➖ Stats Decrease - Attack')
+
+
+@app.on_message(command=['impish','impish@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    bot.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Defence\n➖ Stats Decrease - Sp.Attack')
+
+
+@app.on_message(command=['lax','lax@pokedexkingbot'])
+def nature(message):
+    a = message.text[1:]
+    a = a[0].upper() + a[1:]
+    app.send_message(message.chat.id,f'✨ Info of {a} ✨\n\n➖ Stats Increase - Defence\n➖ Stats Decrease - Sp.Defence')
+
+@app.on_message(command=['pokeballs','pokeballs@pokedexkingbot'])
+def pokeballs(message):
+    app.reply_to(message,'These poke balls have different catch rate multipliers and can increase the chance of catching certain pokemon\n\n• Regular Ball - Multiplier: x1\n\n• Great Ball - Multiplier: x1.5\n\n• Ultra Ball - Multiplier: x2\n\n• Level Ball - Multiplier: x8 if your pokemon\'s level is quadruple or more of the wild pokemon, x4 if your pokemon\'s level is double or more of the wild pokemon, x2 if your pokemon\'s level is higher than the wild pokemon, x1 otherwise\n\n• Fast Ball - Multiplier: x4 if the wild pokemon\'s base speed is at least 100 (or if it is a magnemite, grimer, or tangela), x1 otherwise\n\n• Repeat Ball - Multiplier: x3.5 if you have previously caught the wild pokemon, x1 otherwise\n\n• Nest Ball - Multiplier: Works better on low level pokemon, (maximum of x4 for very low level)\n\n• Net Ball - Multiplier: x3.5 if the wild pokemon is a water or bug type, x1 otherwise\n\n• Quick Ball - Multiplier: x5 if used in the first turn of the battle, x1 otherwise\n\n• Master Ball - Multiplier: x255 (100% capture guaranteed)\n\n• Safari Ball -Multiplier: x1.5 (only used in the /safari zone)\nTo use a poke ball, click the \'Poke Balls\' option in a wild pokemon battle')
+
+@app.on_message(command=['normal'])
+def type(message):
+    app.reply_to(message,'Type  :  normal 🐾\n\nStrong Against:\nNone\n\nWeak Against:\nRock, Ghost, Steel\nResistant To:\nGhost\n\nVulnerable To:\nFighting')
+
+@app.on_message(command=['fighting'])
+def type(message):
+    app.reply_to(message,'Type  :  fighting👊\n\nStrong Against:\nNormal, Rock, Steel, Ice, Dark\n\nWeak Against:\nFlying, Poison, Psychic, Bug, Ghost, Fairy\n\nResistant To:\nRock, Bug, Dark\n\nVulnerable To:\nFlying, Psychic, Fairy')
+
+@app.on_message(command=['rock'])
+def type(message):
+    app.reply_to(message,'Type  :  rock 🪨🪨\n\nStrong Against:\nFlying, Bug, Fire, Ice\n\nWeak Against:\nFighting, Ground, Steel\n\nResistant To:\nNormal, Flying, Poison, Fire\n\nVulnerable To:\nFighting, Ground, Steel, Water, Grass')
+
+@app.on_message(command=['flying'])
+def type(message):
+    app.reply_to(message,'Type  :  flying 🦅🦅\n\nStrong Against:\nFighting, Bug, Grass\n\nWeak Against:\nRock, Steel, Electric\n\nResistant To:\nFighting, Ground, Bug, Grass\n\nVulnerable To:\nRock, Electric, Ice')
+
+@app.on_message(command=['poison'])
+def type(message):
+    app.reply_to(message,'Type  :  poison ☠️\n\nStrong Against:\nGrass, Fairy\n\nWeak Against:\nPoison, Ground, Rock, Ghost, Steel\n\nResistant To:\nFighting, Poison, Grass, Fairy, Bug\n\nVulnerable To:\nGround, Psychic')
+
+ground = '''Type  :  ground 🌏🌏
+
+Strong Against:
+Poison, Rock, Steel, Fire, Electric
+
+Weak Against:
+Flying, Bug, Grass
+
+Resistant To:
+Poison, Rock, Electric
+
+Vulnerable To:
+Water, Grass, Ice'''
+
+@app.on_message(command=['ground'])
+def type(message):
+    app.reply_to(message,ground)
+
+bug = '''Type  :  bug 🐞🐞
+
+Strong Against:
+Grass, Psychic, Dark
+
+Weak Against:
+Fighting, Flying, Poison, Ghost, Steel, Fire, Fairy
+
+Resistant To:
+Fighting, Ground, Grass
+
+Vulnerable To:
+Flying, Rock, Fire'''
+
+@app.on_message(command=(['bug'])
+def type(message):
+    app.reply_to(message,bug)
+
+
+ghost = '''Type  :  ghost 👻 👻
+
+Strong Against:
+Ghost, Psychic
+
+Weak Against:
+Normal, Dark
+
+Resistant To:
+Normal, Fighting, Poison, Bug
+
+Vulnerable To:
+Ghost, Dark'''
+
+@app.on_message(command=['ghost'])
+def type(message):
+    app.reply_to(message,ghost)
+
+steel = '''Type  :  steel⚙️⚙️
+
+Strong Against:
+Rock, Ice, Fairy
+
+Weak Against:
+Steel, Fire, Water, Electric
+
+Resistant To:
+Normal, Flying, Poison, Rock, Bug, Steel, Grass, Psychic, Ice, Dragon, Fairy
+
+Vulnerable To:
+Fighting, Ground, Fire'''
+
+@app.on_message(command=['steel'])
+def type(message):
+    app.reply_to(message,steel)
+
+fire = '''Type  :  fire🔥🔥
+
+Strong Against:
+Bug, Steel, Grass, Ice
+
+Weak Against:
+Rock, Fire, Water, Dragon
+
+Resistant To:
+Bug, Steel, Fire, Grass, Ice, Fairy
+
+Vulnerable To:
+Ground, Rock, Water'''
+
+@app.on_message(command=['fire'])
+def type(message):
+    app.reply_to(message,fire)
+
+water = '''Type  :  water💧💧
+
+Strong Against:
+Ground, Rock, Fire
+
+Weak Against:
+Water, Grass, Dragon
+
+Resistant To:
+Steel, Fire, Water, Ice
+
+Vulnerable To:
+Grass, Electric'''
+
+@app.on_message(command=['water'])
+def type(message):
+    app.reply_to(message,water)
+
+grass = '''Type  :  grass🌿🌿
+
+Strong Against:
+Ground, Rock, Water
+
+Weak Against:
+Flying, Poison, Bug, Steel, Fire, Grass, Dragon
+
+Resistant To:
+Ground, Water, Grass, Electric
+
+Vulnerable To:
+Flying, Poison, Bug, Fire, Ice'''
+
+@app.on_message(command=['grass'])
+def type(message):
+    app.reply_to(message,grass)
+
+
+electric = '''Type  :  electric⚡️⚡️
+
+Strong Against:
+Flying, Water
+
+Weak Against:
+Ground, Grass, Electric, Dragon
+
+Resistant To:
+Flying, Steel, Electric
+
+Vulnerable To:
+Ground'''
+@app.on_message(command=['electric'])
+def type(message):
+    app.reply_to(message,electric)
+
+psychic = '''Type  :  psychic🔮🔮
+
+Strong Against:
+Fighting, Poison
+
+Weak Against:
+Steel, Psychic, Dark
+
+Resistant To:
+Fighting, Psychic
+
+Vulnerable To:
+Bug, Ghost, Dark'''
+
+@app.on_message(command=['psychic'])
+def type(message):
+    app.reply_to(message,psychic)
+
+ice = '''Type  :  ice 🧊❄️❄️
+
+Strong Against:
+Flying, Ground, Grass, Dragon
+
+Weak Against:
+Steel, Fire, Water, Ice
+
+Resistant To:
+Ice
+
+Vulnerable To:
+Fighting, Rock, Steel, Fire'''
+
+@app.on_message(command=['ice'])
+def type(message):
+    app.reply_to(message,ice)
+
+dragon = '''Type  :  dragon🐉🐉 
+
+Strong Against:
+Dragon
+
+Weak Against:
+Steel, Fairy
+
+Resistant To:
+Fire, Water, Grass, Electric
+
+Vulnerable To:
+Ice, Dragon, Fairy'''
+
+@app.on_message(command=['dragon'])
+def type(message):
+    app.reply_to(message,dragon)
+
+fairy = '''Type  :  fairy🧚‍♂🧚‍♀🧚
+
+Strong Against:
+Fighting, Dragon, Dark
+
+Weak Against:
+Poison, Steel, Fire
+
+Resistant To:
+Fighting, Bug, Dragon, Dark
+
+Vulnerable To:
+Poison, Steel'''
+
+@app.on_message(command=['fairy'])
+def type(message):
+    app.reply_to(message,fairy)
+
+dark = '''Type  :  dark 🕶🌙🌙
+
+Strong Against:
+Ghost, Psychic
+
+Weak Against:
+Fighting, Dark, Fairy
+
+Resistant To:
+Ghost, Psychic, Dark
+
+Vulnerable To:
+Fighting, Bug, Fairy'''
+
+@app.on_message(command=['dark'])
+def type(message):
+    app.reply_to(message,dark)
+
+movesets = '''Moveset For the Commonly used Legendary Trio Pokes and others.
+
+Rayquaza
+Dragon Ascent
+Earthquake
+Outrage
+Crunch (can be removed and giga can be added)
+
+Kyogre
+Hyper Beam
+Water Sprout
+Ice beam
+Thunderbolt
+
+Groudon
+Precipice Blades
+Eruption
+Rock Slide/Stone edge
+Hammer Arm
+
+Dialga
+Roar of Time
+Flash Cannon
+Overheat
+Aura Sphere
+
+Palkia
+Spacial Rend
+Aura Sphere
+Hydro Pump
+Thunderbolt
+
+Giratina
+Shadow Force
+Dragon Claw
+Earthquake
+Giga Impact
+
+Black Kyurem
+Freeze Shock
+Outrage
+Shadow Claw
+Fusion Bolt
+
+White Kyurem
+Fusion Flare
+Dragon Pulse
+Ice burn
+Focus Blast
+
+Kyurem-Normal
+Slash
+Outrage
+Shadow Claw
+Glaciate
+
+Reshiram
+Dragon Pulse
+Blue Flare
+Fusion Flare
+Extrasensory
+
+Zekrom
+Crunch 
+Fusion Bolt
+Bolt Strike
+Outrage
+
+Yveltal
+Foul Play
+Rock Slide
+Dragon Claw
+Sky attack
+
+Xerneas- Spa Trained
+Close Combat or Add Focus Blast (optional)
+Moonblast
+Flash Cannon
+Thunderbolt
+
+Atk Trained 
+Giga Impact
+Close Combat
+Moonblast
+Megahorn
+
+Zygarde
+Earthquake
+Rock Slide
+Outrage
+Crunch
+
+Solgaleo
+Sunsteel Strike
+Earthquake
+Giga Impact
+Wild Charge
+
+Lunala
+Moongeist Beam
+Moonblast
+Dream Eater
+Hyper Beam
+
+Necrozma-Normal
+Prismatic Laser
+Rock Blast
+Dark Pulse
+Photon Geysor
+
+Necrozma-Dusk mane
+Rock Blast
+Earthquake
+Prismatic Laser
+Sunsteel Strike
+
+Necrozma-Dawn Wings
+Prismatic Laser
+Moongeist Beam
+Power Gem
+Photon Geysor
+
+Necrozma-Ultra
+Prismatic Laser
+Dark Pulse
+Power Gem
+Solar Beam /Flash Cannon
+
+Ho-oH
+Earthquake
+Sky Attack
+Sacred Fire
+Future Sight (or replace with any tms)
+
+Lugia
+Waterfall
+Earthquake
+Sky Attack
+Future Sight
+
+Arceus (Well,it's according to Different types,but Moveset for Normal arc is)
+
+Giga Impact
+Earthquake
+Rock Slide
+Shadow Claw
+
+Zeraora
+Plasma Fists
+Giga Impact
+Brutal Swing
+Close Combat
+
+Pheromosa
+High Jump Kick
+Poison Jab
+Giga Impact
+Lunge
+
+Mewtwo And Mewtwo Y
+Ice Beam(or use blizzard but low accuracy)
+Future Sight
+Shadow Ball
+Aura Sphere(Can be replaced by Focus Blast but risky,as in the case of Ice beam or Blizzard)
+
+Mewtwo X
+Giga Impact
+Earthquake
+Brick Break
+Psycho Cut
+
+Victini
+V-Create
+Zen Headbutt
+Wild Charge
+Double Edge
+
+Jirachi
+Doom Desire
+Future Sight
+Hyper Beam
+Solar Beam
+
+Celebi
+Dazzling Gleam
+Leaf Storm
+Hyper Beam
+Future Sight
+
+Regigigas
+Giga Impact
+Earthquake
+Zen Headbutt
+Knock off
+
+Deoxys
+Psycho Boost
+Ice Beam/Blizzard
+Thunderbolt/Focus Blast (our choice)
+Dark Pulse'''
+
+@app.on_message(command=['moveset'])
+def type(message):
+    app.reply_to(message,movesets)
+
+@app.on_message(command=['id'])
+def id(message):
+    app.reply_to(message,""")
+
+
 
 # ===== Raid commands =====
 @app.on_message(Filters.command(['addcode', 'addcode@pokedexkingBot']))
