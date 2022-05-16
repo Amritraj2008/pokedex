@@ -548,11 +548,8 @@ def send_photo(message):
     tb.send_chat_action(message.chat.id, 'upload_photo')
     img = open('out.jpg', 'rb')
     @app.send_photo(message.chat.id, img, reply_to_message_id=message.message_id)
-    img.close()
+    
 
-@app.on_message(Filters.command=['start', 'start@pokedexkingbot'])
-def start(message):
-    app.reply_to(message,f'✨ Hello @{message.from_user.username} ✨\n\n✨ I am PokeDex Bot ✨\n\n✨ My Master Is @amritraj20_08 ✨\n\n✨Add Me To Group And I will help you by providing informaton about pokemon Related Facts✨')
 
 @app.on_message(Filters.command=['hardy','docile','serious','bashful','quirky','Hardy','Docile','Serious','Bashful','Quirky','hardy@pokedexkingbot','docile@pokedexkingbot','serious@pokedexkingbot','bashful@pokedexkingbot','Quirky@pokedexkingbot'])
 def nature(message):
